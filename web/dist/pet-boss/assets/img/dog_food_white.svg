@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="23.348959pt"
+   height="18pt"
+   viewBox="0 0 35.023438 27"
+   version="1.2"
+   id="svg12"
+   sodipodi:docname="dog_food_white.svg"
+   inkscape:version="1.0.2 (e86c870879, 2021-01-15, custom)">
+  <metadata
+     id="metadata16">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="2560"
+     inkscape:window-height="1017"
+     id="namedview14"
+     showgrid="false"
+     inkscape:zoom="26.5625"
+     inkscape:cx="15.565972"
+     inkscape:cy="15.588154"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg12" />
+  <defs
+     id="defs5">
+    <clipPath
+       id="clip1">
+      <path
+         d="m 0.488281,3.851562 h 35.023438 v 27 H 0.488281 Z m 0,0"
+         id="path2" />
+    </clipPath>
+  </defs>
+  <g
+     id="surface1"
+     transform="translate(-0.488281,-3.851562)">
+    <g
+       clip-path="url(#clip1)"
+       clip-rule="nonzero"
+       id="g9">
+      <path
+         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         d="M 35.5,24.433594 32.695312,8.796875 C 32.683594,8.707031 32.667969,8.621094 32.648438,8.53125 l -0.0078,-0.027344 c 0,0 0,0 0,-0.00391 C 31.871094,5.480469 24.738281,3.851562 18,3.851562 11.261719,3.851562 4.128906,5.480469 3.359375,8.5 c 0,0.00391 0,0.00391 0,0.00391 L 3.351562,8.53125 C 3.332031,8.621094 3.316406,8.707031 3.304688,8.796875 L 0.5,24.433594 c -0.003906,0.03516 -0.011719,0.07813 -0.011719,0.121094 0,5.648437 9.996094,6.296874 17.511719,6.296874 7.515625,0 17.511719,-0.648437 17.511719,-6.296874 0,-0.04297 -0.0078,-0.08594 -0.01172,-0.121094 z m -8.394531,-1.195313 c 0,1.148438 -0.9375,2.078125 -2.101563,2.078125 -1.160156,0 -2.101562,-0.929687 -2.101562,-2.078125 0,-0.242187 0.05078,-0.476562 0.128906,-0.691406 h -10.0625 c 0.07813,0.214844 0.128906,0.449219 0.128906,0.691406 0,1.148438 -0.941406,2.078125 -2.101562,2.078125 -1.164063,0 -2.101563,-0.929687 -2.101563,-2.078125 0,-1.148437 0.9375,-2.078125 2.101563,-2.078125 -1.164063,0 -2.101563,-0.925781 -2.101563,-2.078125 0,-1.148437 0.9375,-2.074219 2.101563,-2.074219 1.160156,0 2.101562,0.925782 2.101562,2.074219 0,0.242188 -0.05078,0.480469 -0.128906,0.695313 h 10.0625 c -0.07813,-0.214844 -0.128906,-0.453125 -0.128906,-0.695313 0,-1.148437 0.941406,-2.074219 2.101562,-2.074219 1.164063,0 2.101563,0.925782 2.101563,2.074219 0,1.152344 -0.9375,2.078125 -2.101563,2.078125 1.164063,0 2.101563,0.929688 2.101563,2.078125 z M 18,12.851562 c -8.246094,0 -13.308594,-2.214843 -13.308594,-3.804687 0,-1.59375 5.0625,-3.808594 13.308594,-3.808594 8.246094,0 13.308594,2.214844 13.308594,3.808594 0,1.589844 -5.0625,3.804687 -13.308594,3.804687 z m 0,0"
+         id="path7" />
+    </g>
+  </g>
+</svg>

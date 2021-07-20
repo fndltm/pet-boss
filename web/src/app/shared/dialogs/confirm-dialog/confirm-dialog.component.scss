@@ -1,0 +1,21 @@
+@import "../../../../assets/scss/colors";
+
+.mat-dialog-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  button {
+    font-size: 1rem;
+    color: $white;
+  }
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .mat-dialog-actions {
+    button {
+      font-size: 0.5rem;
+    }
+  }
+}

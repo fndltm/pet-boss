@@ -1,0 +1,37 @@
+.snack {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.snack__container {
+  display: flex;
+}
+
+.snack__container__icon {
+  font-size: 24px;
+}
+
+.snack__container__message {
+  padding-left: 1rem;
+  padding-top: 0.2rem;
+}
+
+.snack__clear {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+}
+
+.snack__clear__button {
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+
+  &:hover {
+    opacity: 70%;
+  }
+}

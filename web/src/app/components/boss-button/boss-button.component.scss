@@ -1,0 +1,207 @@
+@import "../../../assets/scss/colors";
+
+::ng-deep.mat-progress-spinner circle,
+.mat-spinner circle,
+.mat-progress-spinner {
+  stroke: $white !important;
+  display: inline-block !important;
+  margin-top: -0.3rem;
+}
+
+.mat-progress-spinner::ng-deep circle {
+  stroke: currentColor !important;
+}
+
+.mat-raised-button {
+  border-radius: 2rem;
+  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.2),
+    0px 0px 0px 0px rgba(0, 0, 0, 0.14), 0px 0px 0px 0px rgba(0, 0, 0, 0.12) !important;
+}
+
+.mat-stroked-button {
+  border-radius: 2rem;
+  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.2),
+    0px 0px 0px 0px rgba(0, 0, 0, 0.14), 0px 0px 0px 0px rgba(0, 0, 0, 0.12) !important;
+}
+
+.mat-raised-button[disabled] {
+  color: $gray-450 !important;
+  background-color: $gray-380 !important;
+  border: 2.5px solid $gray-380 !important;
+}
+
+.mat-raised-button[disabled]:hover {
+  color: $gray-600 !important;
+  background-color: $gray-450 !important;
+  border: 2.5px solid $gray-450 !important;
+}
+
+.mat-stroked-button[disabled] {
+  color: $gray-450 !important;
+  background-color: $gray-380 !important;
+  border: 3px solid $gray-380 !important;
+}
+
+.mat-stroked-button[disabled]:hover {
+  color: $gray-600 !important;
+  background-color: $gray-450 !important;
+  border: 3px solid $gray-450 !important;
+}
+
+.mat-red {
+  color: $white;
+  background-color: $red;
+  border-color: $red;
+  border: 0.15rem solid $red;
+  transition-duration: 0.4s;
+  &:hover {
+    background-color: $dark-red;
+    border: 0.15rem solid $dark-red;
+  }
+  &.true {
+    color: $red;
+    background-color: $transparent;
+    border: 0.15rem solid $red;
+  }
+  &.true:hover {
+    color: $white;
+    background-color: $red;
+    border: 0.15rem solid $red;
+  }
+}
+
+.mat-blue {
+  color: $white;
+  background-color: $blue;
+  border-color: $blue;
+  border: 0.15rem solid $blue;
+  transition-duration: 0.4s;
+  &:hover {
+    background-color: $dark-blue;
+    border: 0.15rem solid $dark-blue;
+  }
+  &.true {
+    color: $blue;
+    background-color: $transparent;
+    border: 0.15rem solid $blue;
+  }
+  &.true:hover {
+    color: $white;
+    background-color: $blue;
+    border: 0.15rem solid $blue;
+  }
+}
+
+.mat-green {
+  color: $white;
+  background-color: $green;
+  border-color: $green;
+  border: 0.15rem solid $green;
+  transition-duration: 0.4s;
+  &:hover {
+    background-color: $dark-green;
+    border: 0.15rem solid $dark-green;
+  }
+  &.true {
+    color: $green;
+    background-color: $transparent;
+    border: 0.15rem solid $green;
+  }
+  &.true:hover {
+    color: $white;
+    background-color: $green;
+    border: 0.15rem solid $green;
+  }
+}
+
+.mat-yellow {
+  color: $white;
+  background-color: $yellow;
+  border-color: $yellow;
+  border: 0.15rem solid $yellow;
+  transition-duration: 0.4s;
+  &:hover {
+    background-color: $dark-yellow;
+    border: 0.15rem solid $dark-yellow;
+  }
+  &.true {
+    color: $yellow;
+    background-color: $transparent;
+    border: 0.15rem solid $yellow;
+  }
+  &.true:hover {
+    color: $white;
+    background-color: $yellow;
+    border: 0.15rem solid $yellow;
+  }
+}
+
+.mat-orange {
+  color: $white;
+  background-color: $orange;
+  border-color: $orange;
+  border: 0.15rem solid $orange;
+  transition-duration: 0.4s;
+  &:hover {
+    background-color: $dark-orange;
+    border: 0.15rem solid $dark-orange;
+  }
+  &.true {
+    color: $orange;
+    background-color: $transparent;
+    border: 0.15rem solid $orange;
+  }
+  &.true:hover {
+    color: $white;
+    background-color: $orange;
+    border: 0.15rem solid $orange;
+  }
+}
+
+.mat-black {
+  color: $white;
+  background-color: $gray-900;
+  border-color: $gray-900;
+  border: 0.15rem solid $gray-900;
+  transition-duration: 0.4s;
+  &:hover {
+    background-color: $black;
+    border: 0.15rem solid $black;
+  }
+  &.true {
+    color: $gray-900;
+    background-color: $transparent;
+    border: 0.15rem solid $gray-900;
+  }
+  &.true:hover {
+    color: $white;
+    background-color: $gray-900;
+    border: 0.15rem solid $gray-900;
+  }
+}
+
+.small {
+  display: inline;
+  font-size: 1rem;
+}
+.medium {
+  display: inline;
+  margin: auto;
+  font-size: 1.2rem;
+  padding-top: 0.15rem;
+  padding-bottom: 0.15rem;
+}
+.large {
+  display: inline;
+  margin: auto;
+  font-size: 1.5rem;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+}
+.extra-large {
+  display: inline;
+  margin: auto;
+  font-size: 1.9rem;
+  padding-top: 0.45rem;
+  padding-bottom: 0.45rem;
+}

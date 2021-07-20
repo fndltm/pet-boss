@@ -1,0 +1,17 @@
+<mat-card class="content">
+  <div class="content__button">
+    <button mat-icon-button matTooltip="Fechar" [mat-dialog-close] type="button">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+  <mat-card-header class="content__header">
+    <mat-card-title>{{data?.title}}</mat-card-title>
+    <mat-card-subtitle>{{data?.subtitle}}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image [src]="file">
+  <mat-card-content>
+    <p>
+      {{data.description}}
+    </p>
+  </mat-card-content>
+</mat-card>

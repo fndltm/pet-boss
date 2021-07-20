@@ -1,0 +1,134 @@
+<header>
+  <mat-sidenav-container hasBackdrop="true">
+    <mat-sidenav #sidenav mode="push" fixedInViewport="true">
+      <mat-nav-list class="navlist__content" (click)="sidenav.close()">
+        <div class="full-width">
+          <mat-label>Bem-vindo: {{userFirstName}}</mat-label>
+          <a mat-list-item routerLink="user" *ngIf="this.tokenStorageService.isADMIN()">
+            <mat-icon>people</mat-icon>
+            Usuários
+          </a>
+          <a mat-list-item routerLink="posts">
+            <mat-icon>post_add</mat-icon>
+            Postagens
+          </a>
+          <a mat-list-item routerLink="petshop">
+            <mat-icon>place</mat-icon>
+            Buscar Petshops
+          </a>
+          <a mat-list-item (click)="openAngularMaterial()">
+            <mat-icon>pivot_table_chart</mat-icon>
+            Componentes
+          </a>
+          <!-- <a mat-list-item>
+            <mat-icon>spa</mat-icon>
+            Bem Estar
+          </a>
+          <a mat-list-item>
+            <mat-icon>health_and_safety</mat-icon>
+            Saúde
+          </a>
+          <a mat-list-item>
+            <mat-icon>pets</mat-icon>
+            Raças
+          </a>
+          <a mat-list-item>
+            <img class="mat-icon notranslate material-icons mat-icon-no-color" src="../assets/img/dog_food_black.svg"
+              alt="dog_food.svg" width="24" height="24">
+            Alimentação
+          </a>
+          <a mat-list-item>
+            <mat-icon>place</mat-icon>
+            Buscar Petshops
+          </a>
+          <a mat-list-item>
+            <mat-icon>pivot_table_chart</mat-icon>
+            Componentes
+          </a> -->
+        </div>
+        <div class="full-width">
+          <a mat-list-item *ngIf="!authService.isLoggedIn" routerLink="login">
+            <mat-icon>login</mat-icon>
+            Login
+          </a>
+          <a mat-list-item (click)="authService.logout()" *ngIf="authService.isLoggedIn">
+            <mat-icon>logout</mat-icon>
+            Logout
+          </a>
+        </div>
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+
+      <mat-toolbar class="is-hidden-desktop mobile-nav">
+        <button mat-icon-button (click)="sidenav.toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <a href="#!" class="logo">
+          <img src="../assets/img/logo/dog-boss-logo-white-transparent.svg" alt="logo.svg" height="36">
+        </a>
+      </mat-toolbar>
+
+      <mat-toolbar class="is-hidden-touch desktop-nav">
+        <a href="#!" class="logo">
+          <img src="../assets/img/logo/dog-boss-logo-white-transparent.svg" alt="logo.svg" height="48">
+          <span class="logo-text">Dog Boss</span>
+        </a>
+        <div class="nav-buttons">
+          <!-- <button mat-button>
+            <mat-icon>spa</mat-icon>
+            Bem Estar
+          </button>
+          <button mat-button>
+            <mat-icon>health_and_safety</mat-icon>
+            Saúde
+          </button>
+          <button mat-button>
+            <mat-icon>pets</mat-icon>
+            Raças
+          </button>
+          <button mat-button>
+            <img class="mat-icon notranslate material-icons mat-icon-no-color" src="../assets/img/dog_food_white.svg"
+              alt="dog_food.svg" width="24" height="24">
+            Alimentação
+          </button>
+          <button mat-button>
+            <mat-icon>place</mat-icon>
+            Buscar Petshops
+          </button>
+          <button mat-button>
+            <mat-icon>pivot_table_chart</mat-icon>
+            Componentes
+          </button> -->
+          <button mat-button routerLink="user" *ngIf="this.tokenStorageService.isADMIN()">
+            <mat-icon>people</mat-icon>
+            Usuários
+          </button>
+          <button mat-button routerLink="posts">
+            <mat-icon>post_add</mat-icon>
+            Postagens
+          </button>
+          <button mat-button routerLink="petshop">
+            <mat-icon>place</mat-icon>
+            Buscar Petshops
+          </button>
+          <button mat-button (click)="openAngularMaterial()">
+            <mat-icon>pivot_table_chart</mat-icon>
+            Componentes
+          </button>
+        </div>
+        <mat-label>Bem-vindo: {{userFirstName}}</mat-label>
+        <button mat-button *ngIf="!authService.isLoggedIn" routerLink="login">
+          <mat-icon>login</mat-icon>
+          Login
+        </button>
+        <button mat-button (click)="authService.logout()" *ngIf="authService.isLoggedIn">
+          <mat-icon>logout</mat-icon>
+          Logout
+        </button>
+      </mat-toolbar>
+
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</header>

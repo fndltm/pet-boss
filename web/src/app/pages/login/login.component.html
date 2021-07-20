@@ -1,0 +1,65 @@
+<div class="content">
+  <mat-card class="content__card mat-elevation-z8">
+    <div class="logo">
+      <img src="../assets/img/logo/dog-boss-logo-transparent.svg" class="logo__image is-hidden-tablet" />
+      <img src="../assets/img/logo/dog-boss-logo-alt-transparent.svg" class="logo__image is-hidden-mobile" />
+      <img src="../assets/img/logo/dog-boss-path-bottom.svg" class="logo__image-path-bottom" />
+      <img src="../assets/img/logo/dog-boss-path-top.svg" class="logo__image-path-top" />
+    </div>
+    <span class="title is-hidden-desktop">Bem-vindo</span>
+    <div class="login">
+      <span class="title is-hidden-touch">Bem-vindo</span>
+      <form class="login__content" [formGroup]="form" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="fill" color="primary">
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="Digite o email" formControlName="email" required cdkFocusInitial>
+          <mat-error *ngIf="isFieldInvalid('email')">
+            Por favor, informe o email
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" color="primary">
+          <mat-label>Senha</mat-label>
+          <input matInput [type]="hide ? 'password' : 'text'" placeholder="Digite a senha" formControlName="password"
+            required>
+          <button mat-icon-button matSuffix (click)="hide = !hide" type="button">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+          <mat-error *ngIf="isFieldInvalid('password')">
+            Por favor, informe a senha
+          </mat-error>
+        </mat-form-field>
+
+        <button class="login__content__submit-button" mat-raised-button [disabled]="isLoading">
+          <mat-icon>login</mat-icon>
+          Login
+
+          <mat-spinner *ngIf="isLoading" [diameter]="20" color="white">
+          </mat-spinner>
+        </button>
+
+        <button class="login__content__social-button" mat-raised-button (click)="loginWithGoogle()"
+          [disabled]="isLoading" type="button">
+          <mat-icon>
+            <img src="../assets/img/google-logo.svg" alt="google-logo.svg" width="24" height="24">
+          </mat-icon>
+          Continuar com o Google
+
+          <mat-spinner *ngIf="isLoading" [diameter]="20" color="white">
+          </mat-spinner>
+        </button>
+
+        <button class="login__content__social-button" mat-raised-button (click)="loginWithFacebook()"
+          [disabled]="isLoading" type="button">
+          <mat-icon>
+            <img src="../assets/img/facebook-logo.svg" alt="facebook-logo.svg" width="24" height="24">
+          </mat-icon>
+          Continuar com o Facebook
+
+          <mat-spinner *ngIf="isLoading" [diameter]="20" color="white">
+          </mat-spinner>
+        </button>
+      </form>
+    </div>
+  </mat-card>
+</div>

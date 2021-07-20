@@ -1,0 +1,16 @@
+<div [ngClass]="[selectedTheme]">
+  <ng-progress></ng-progress>
+  <div class="wrapper">
+    <ng-container *ngIf="!isNotFoundPage">
+      <app-header (selectedThemeChange)="changeSelectedTheme($event)" *ngIf="isLoggedIn$ | async"></app-header>
+    </ng-container>
+
+    <main>
+      <router-outlet></router-outlet>
+    </main>
+
+    <ng-container *ngIf="!isNotFoundPage">
+      <app-footer *ngIf="isLoggedIn$ | async"></app-footer>
+    </ng-container>
+  </div>
+</div>

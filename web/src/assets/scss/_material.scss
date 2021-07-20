@@ -1,0 +1,356 @@
+@import "~@angular/material/theming";
+@import "../../assets/scss/colors";
+@import "./typography";
+
+@include mat-core();
+
+$petboss-primary: (
+  50: #eaf8f8,
+  100: #cbecee,
+  200: #a8e0e3,
+  300: #85d4d7,
+  400: #6acacf,
+  500: #50c1c6,
+  600: #49bbc0,
+  700: #40b3b9,
+  800: #37abb1,
+  900: #279ea4,
+  A100: #e4feff,
+  A200: #b1fbff,
+  A400: #7ef8ff,
+  A700: #64f7ff,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #000000,
+    700: #000000,
+    800: #000000,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+$petboss-secondary: (
+  50: #e6f1f1,
+  100: #c2dcdd,
+  200: #99c4c6,
+  300: #70acaf,
+  400: #519b9e,
+  500: #32898d,
+  600: #2d8185,
+  700: #26767a,
+  800: #1f6c70,
+  900: #13595d,
+  A100: #96f9ff,
+  A200: #63f6ff,
+  A400: #30f3ff,
+  A700: #16f1ff,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+$petboss-app-primary: mat-palette($petboss-primary);
+$petboss-app-accent: mat-palette($petboss-secondary, A200, A100, A400);
+$petboss-app-warn: mat-palette($mat-red);
+$petboss-app-theme: mat-light-theme(
+  (
+    color: (
+      primary: $petboss-app-primary,
+      accent: $petboss-app-accent,
+      warn: $petboss-app-warn,
+    ),
+    typography: $petboss-typography,
+  )
+);
+
+@include angular-material-theme($petboss-app-theme);
+
+// Define an alternate dark theme.
+$dark-primary: mat-palette($petboss-primary);
+$dark-accent: mat-palette($petboss-secondary);
+$dark-warn: mat-palette($mat-red);
+$dark-theme: mat-dark-theme(
+  (
+    color: (
+      primary: $dark-primary,
+      accent: $dark-accent,
+      warn: $dark-warn,
+    ),
+    typography: $petboss-typography,
+  )
+);
+
+.petboss-dark-theme {
+  @include angular-material-color($dark-theme);
+}
+
+//Organizar a CSS por grupos.
+
+.mat-form-field {
+  width: 100%;
+}
+
+.mat-dialog-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.Success {
+  background: $green !important;
+}
+
+.Error {
+  background: $red !important;
+}
+
+.Warning {
+  color: $black !important;
+  background: $orange !important;
+}
+
+.Info {
+  background: $blue !important;
+}
+
+.mat-blue {
+  color: $blue !important;
+}
+
+.mat-yellow {
+  color: $yellow !important;
+}
+
+.mat-green {
+  color: $green !important;
+}
+
+.mat-snack-bar-container {
+  color: $white !important;
+}
+
+tr.mat-header-row {
+  background-color: $gray !important;
+}
+
+.mat-form-field-invalid .mat-input-element {
+  caret-color: $red !important;
+}
+
+.mat-paginator-container {
+  margin-top: 0px;
+  background-color: $white;
+}
+
+.mat-sort-header-arrow {
+  color: $white !important;
+}
+
+.mat-header-cell {
+  font-size: 1rem !important;
+  font-weight: 500;
+  color: $white !important;
+}
+
+.mat-paginator-page-size-label {
+  font-size: 1rem;
+}
+
+.mat-paginator-range-label {
+  font-size: 1rem;
+}
+
+.mat-calendar {
+  z-index: 999 !important;
+}
+
+td.mat-cell,
+td.mat-footer-cell,
+th.mat-header-cell {
+  font-size: 0.875rem;
+}
+
+.mat-form-field-appearance-fill .mat-form-field-infix {
+  padding: 0.25em 0 0.25em 0;
+}
+
+.mat-form-field-appearance-fill .mat-form-field-flex {
+  border-radius: 0 !important;
+  padding: 0.75em 0 0 0.25em !important;
+}
+
+.mat-table {
+  border-spacing: 0;
+  margin-top: 0.75rem;
+  margin-bottom: 1.2rem;
+}
+
+td.mat-cell {
+  &.noWrap {
+    white-space: nowrap !important;
+  }
+}
+
+.mat-sort-header-container {
+  .mat-sort-header-button {
+    text-align: left !important;
+  }
+}
+
+.mat-radio-button ~ .mat-radio-button {
+  margin-left: 16px;
+}
+
+.mat-radio-label {
+  margin-bottom: 0;
+}
+
+.mat-step-header .mat-step-icon-selected,
+.mat-step-header .mat-step-icon-state-done,
+.mat-step-header .mat-step-icon-state-edit {
+  background-color: $blue;
+  color: $white;
+  width: 50px;
+  height: 50px;
+}
+
+.mat-step-header .mat-step-icon {
+  background-color: rgba(0, 0, 0, 0.54);
+  color: $white;
+  width: 50px;
+  height: 50px;
+  z-index: 1;
+}
+
+.mat-step-header .mat-step-label.mat-step-label-active {
+  color: $blue;
+}
+
+.mat-horizontal-content-container {
+  padding: 0 !important;
+}
+
+.mat-stepper-horizontal-line:nth-child {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 50px;
+  font-size: 1rem;
+  vertical-align: middle;
+}
+
+.mat-stepper-label-position-bottom
+  .mat-horizontal-stepper-header:not(:first-child)::before,
+.mat-stepper-label-position-bottom
+  .mat-horizontal-stepper-header:not(:last-child)::after,
+[dir="rtl"]
+  .mat-stepper-label-position-bottom
+  .mat-horizontal-stepper-header:not(:first-child)::after,
+[dir="rtl"]
+  .mat-stepper-label-position-bottom
+  .mat-horizontal-stepper-header:not(:last-child)::before {
+  display: none !important;
+}
+
+.mat-stepper-horizontal-line {
+  margin-top: -20px !important;
+}
+
+.mat-stepper-label-position-bottom .mat-stepper-horizontal-line {
+  top: 50px !important;
+}
+
+.mat-horizontal-stepper-header {
+  flex-direction: column;
+}
+
+.mat-drawer-inner-container {
+  width: 100%;
+  height: auto !important;
+}
+.mat-drawer {
+  color: $gray !important;
+}
+
+.mat-drawer-backdrop {
+  height: 100vh !important;
+  position: fixed !important;
+}
+
+@mixin styleStepLine($index) {
+  .mat-horizontal-stepper-header {
+    & + .mat-stepper-horizontal-line:nth-child(#{$index}) {
+      height: 2px;
+      background-image: linear-gradient(to right, $dark-green, $dark-green);
+      // margin-top: -20px;
+    }
+  }
+}
+
+@mixin styleEditedStepIcon($index) {
+  .mat-horizontal-stepper-header:nth-child(#{$index}) {
+    .mat-step-icon:not(.mat-step-icon-selected) {
+      background-color: $dark-green;
+    }
+  }
+}
+
+@mixin styleUnEditedStepIcon($index) {
+  .mat-horizontal-stepper-header:nth-child(#{$index}) {
+    .mat-step-icon:not(.mat-step-icon-selected) {
+      background-color: $gray-100;
+    }
+  }
+}
+
+.last-edited-step-1 {
+  @include styleStepLine(2);
+  @include styleEditedStepIcon(1);
+  @include styleUnEditedStepIcon(3);
+}
+
+.last-edited-step-2 {
+  @include styleStepLine(2);
+  @include styleStepLine(4);
+  @include styleEditedStepIcon(1);
+  @include styleEditedStepIcon(3);
+}
+
+.mat-tab-label .mat-tab-label-content {
+  font-size: 1rem;
+}
+
+.mat-sidenav-container {
+  z-index: 999 !important;
+}
+
+.mat-tab-header {
+  flex-shrink: 0;
+  margin-bottom: 1rem !important;
+}
+.mat-tab-nav-bar,
+.mat-tab-header {
+  border-bottom: 1px solid rgba(0, 0, 0, 0) !important;
+}

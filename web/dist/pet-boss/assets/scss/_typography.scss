@@ -1,0 +1,7 @@
+@use "@angular/material" as mat;
+
+$petboss-typography: mat.define-typography-config(
+  $font-family: "Comfortaa, Roboto, Helvetica Neue, sans-serif",
+);
+
+@include mat.core($petboss-typography);

@@ -1,0 +1,99 @@
+<mat-card class="content mat-elevation-z8">
+  <mat-card-title>Gerenciar Usuários</mat-card-title>
+
+  <div class="content__action-buttons">
+    <ng-container *ngIf="checkUserPermission()">
+      <button mat-flat-button class="content__form__add-button" color="primary" (click)="openDialogForm()"
+        matTooltip="Adicionar usuário">
+        <mat-icon matPrefix>add</mat-icon>
+        Adicionar
+      </button>
+    </ng-container>
+
+    <button mat-flat-button color="blue" matTooltip="Recarregar" (click)="refreshUsers()">
+      <mat-icon>refresh</mat-icon>
+    </button>
+  </div>
+
+  <form [formGroup]="searchForm">
+    <mat-form-field>
+      <mat-label>Pesquisar</mat-label>
+      <input matInput placeholder="Ex. Admin" formControlName="search">
+      <mat-icon matPrefix>search</mat-icon>
+    </mat-form-field>
+  </form>
+
+  <mat-card-content class="content__panel">
+    <mat-accordion *ngFor="let user of users">
+      <mat-expansion-panel class="mb-3">
+        <mat-expansion-panel-header>
+          <mat-panel-title class="content__panel-title">
+            <span>#{{user.id}}</span>
+            <span class="ml-3 is-hidden-mobile">{{user.name}}</span>
+          </mat-panel-title>
+          <mat-panel-description class="content__panel-description">
+            <ng-container *ngIf="user.active">
+              <mat-chip-list>
+                <mat-chip color="green" selected disabled class="content__panel-description__chip">
+                  <mat-icon>how_to_reg</mat-icon>
+                  Ativo
+                </mat-chip>
+              </mat-chip-list>
+            </ng-container>
+            <ng-container *ngIf="!user.active">
+              <mat-chip-list>
+                <mat-chip color="red" selected disabled class="content__panel-description__chip">
+                  <mat-icon>person_off</mat-icon>
+                  Inativo
+                </mat-chip>
+              </mat-chip-list>
+            </ng-container>
+            <div *ngIf="user.email != 'admin@petboss.com' && checkUserPermission()"
+              class="content__panel-description__buttons">
+              <button mat-icon-button color="primary" matTooltip="Editar" (click)="openDialogForm(user)">
+                <mat-icon>edit</mat-icon>
+              </button>
+              <button mat-icon-button color="warn" matTooltip="Deletar" (click)="deleteUser(user)">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </div>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-list>
+          <mat-list-item>
+            <mat-icon mat-list-icon>person</mat-icon>
+            {{user.name}}
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon mat-list-icon>email</mat-icon>
+            {{user.email}}
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon mat-list-icon>manage_accounts</mat-icon>
+            <mat-list-item *ngFor="let role of user.roles">
+              {{role.name}}
+            </mat-list-item>
+          </mat-list-item>
+          <mat-list-item *ngIf="user.provider">
+            <span class="mr-3">Provedor:</span>
+            <ng-container *ngIf="user.provider === 'GOOGLE'">
+              <mat-icon>
+                <img src="../assets/img/google-logo.svg" alt="google-logo.svg" width="24" height="24">
+              </mat-icon>
+            </ng-container>
+            <ng-container *ngIf="user.provider === 'FACEBOOK'">
+              <mat-icon>
+                <img src="../assets/img/facebook-logo.svg" alt="facebook-logo.svg" width="24" height="24">
+              </mat-icon>
+            </ng-container>
+          </mat-list-item>
+        </mat-list>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </mat-card-content>
+  <mat-card-footer>
+    <mat-paginator [length]="totalElements" [pageSizeOptions]="[1, 5, 10, 25, 100, totalElements]" [pageSize]="25"
+      [showFirstLastButtons]="true">
+    </mat-paginator>
+  </mat-card-footer>
+</mat-card>

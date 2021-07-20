@@ -1,0 +1,222 @@
+@import "../../../assets/scss/colors";
+
+/* Customize mat-spinner */
+::ng-deep.mat-progress-spinner circle,
+.mat-spinner circle,
+.mat-progress-spinner {
+  stroke: $white !important;
+  display: inline-block !important;
+  margin-top: -0.3rem;
+}
+
+.content {
+  width: 100vw;
+  height: 100vh;
+  padding: 1rem;
+  background-color: $primary;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__card {
+    width: 100%;
+    height: 100%;
+    border-radius: 25px !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+    .logo {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &__image {
+        height: 6rem;
+      }
+
+      &__image-path-bottom {
+        height: 90%;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+      }
+
+      &__image-path-top {
+        height: 90%;
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+    }
+
+    .title {
+      width: 100%;
+      color: $primary;
+      font-size: 1.6rem;
+      text-align: center;
+      margin: 1rem 0 0.5rem 0;
+    }
+
+    .login {
+      width: 100%;
+      padding: 1rem;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      &__content {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        &__submit-button[disabled] {
+          color: $gray-450 !important;
+          background-color: $gray-380 !important;
+          border: 2.5px solid $gray-380 !important;
+          background-image: none;
+
+          &:hover {
+            color: $gray-600 !important;
+            background-color: $gray-450 !important;
+            border: 2.5px solid $gray-450 !important;
+          }
+        }
+
+        &__submit-button {
+          transition: 0.5s;
+          background-size: 200% auto;
+          background-image: linear-gradient(to right, $primary, $secondary);
+          color: $white;
+          text-transform: uppercase;
+          border: 0;
+          border-radius: 25px !important;
+          letter-spacing: 1px;
+          cursor: pointer;
+          font-size: 1rem !important;
+          width: 80% !important;
+          line-height: 3rem;
+          margin-top: 6px;
+
+          &:hover {
+            background-position: center right;
+          }
+        }
+
+        &__social-button {
+          transition: 0.5s;
+          color: $dark-gray;
+          border: 0;
+          border-radius: 25px !important;
+          cursor: pointer;
+          line-height: 3rem;
+          min-width: 100% !important;
+          font-size: 0.9rem !important;
+          margin-top: 1rem;
+
+          &:hover {
+            background-position: center right;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .logo__image-path-bottom {
+    display: none;
+  }
+
+  .logo__image-path-top {
+    display: none;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .content__card {
+    .logo__image {
+      height: 14rem;
+    }
+
+    .logo__image-path-bottom {
+      display: none;
+    }
+
+    .logo__image-path-top {
+      display: none;
+    }
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .content {
+    padding: 2rem;
+
+    &__card {
+      flex-direction: row;
+      justify-content: space-between;
+
+      .logo__image {
+        height: 18rem;
+      }
+
+      .logo__image-path-bottom {
+        display: block;
+      }
+
+      .logo__image-path-top {
+        display: block;
+      }
+
+      .login {
+        margin-right: 4rem;
+      }
+
+      span.is-hidden-desktop {
+        display: none !important;
+      }
+
+      span.is-hidden-touch {
+        display: block !important;
+      }
+    }
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .content {
+    &__card {
+      .logo__image {
+        height: 20rem;
+      }
+    }
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1920px) {
+  .content {
+    padding: 6rem 8rem;
+
+    &__card {
+      .logo__image {
+        height: 26rem;
+      }
+
+      .login {
+        margin-right: 8rem;
+      }
+    }
+  }
+}

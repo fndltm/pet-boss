@@ -1,0 +1,25 @@
+<button *ngIf="!outline" class="{{outline}} {{size}}" mat-raised-button [disabled]="disabled" color="{{color}}">
+  <mat-icon class="{{size}}" *ngIf="icon && iconPosition === 'left' && !isLoading">{{icon}}</mat-icon>
+  <mat-spinner *ngIf="iconPosition === 'left' && isLoading" class="{{size}}" [diameter]="20" color="success">
+  </mat-spinner>
+
+  {{text}}
+
+  <mat-icon class="{{size}}" *ngIf="icon && iconPosition == 'right' && !isLoading">{{icon}}</mat-icon>
+  <mat-spinner *ngIf="iconPosition === 'right' && isLoading" class="{{size}}" [diameter]="20" color="success">
+  </mat-spinner>
+</button>
+
+<button *ngIf="outline" class="{{outline}} {{size}}" mat-stroked-button [disabled]="disabled" color="{{color}}">
+  <mat-icon class="{{size}}" *ngIf="icon && iconPosition === 'left'">{{icon}}
+  </mat-icon>
+  <mat-spinner *ngIf="iconPosition === 'left' && isLoading" class="{{size}}" [diameter]="20">
+  </mat-spinner>
+
+  {{text}}
+
+  <mat-icon class="{{size}}" *ngIf="icon && iconPosition == 'right'">{{icon}}
+  </mat-icon>
+  <mat-spinner *ngIf="iconPosition === 'right' && isLoading" class="{{size}}" [diameter]="20" color="success">
+  </mat-spinner>
+</button>

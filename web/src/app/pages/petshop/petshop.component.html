@@ -1,0 +1,34 @@
+<div class="spinner" *ngIf="isLoading">
+  <mat-spinner></mat-spinner>
+</div>
+
+<div class="content">
+  <mat-form-field>
+    <mat-label>Pesquisar</mat-label>
+    <input matInput placeholder="Digite o endereço" #search>
+    <mat-icon matPrefix>search</mat-icon>
+  </mat-form-field>
+
+
+  <div class="content__cards">
+
+    <mat-card class="content__cards__card mat-elevation-z8" *ngFor="let place of places">
+      <mat-card-header>
+        <mat-card-title>{{place?.name}}</mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content>
+        <p>{{place?.formatted_address}}</p>
+        <p>{{place?.formatted_phone_number}}</p>
+      </mat-card-content>
+
+      <mat-card-actions>
+        <button mat-raised-button (click)="openMaps(place?.url)" color="primary">
+          <mat-icon>map</mat-icon>
+          Mais informações
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
+<div #placesService></div>

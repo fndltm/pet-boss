@@ -1,0 +1,129 @@
+@import "assets/scss/material";
+@import "assets/scss/colors";
+@import "../node_modules/bulma/sass/helpers/spacing.sass";
+@import "../node_modules/bulma/sass/helpers/visibility.sass";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* font-size: 62.5% = 10px = 1rem | 1.6rem = 16px */
+html,
+body {
+  height: 100vh;
+  max-height: 100vh;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  font-size: 1rem;
+}
+
+body {
+  font-family: Comfortaa, Roboto, "Helvetica Neue", sans-serif;
+  letter-spacing: normal;
+  animation: transitionIn 0.75s;
+  background-image: url(./assets/img/paw.svg);
+  background-size: 10%;
+  background-position: top;
+  display: flex;
+  flex-direction: column;
+}
+
+@font-face {
+  font-family: Comfortaa;
+  src: url(./assets/fonts/Comfortaa-Medium.ttf);
+}
+
+@keyframes transitionIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+hr {
+  margin-top: 1rem;
+}
+
+.full-height {
+  height: 100%;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.full-size {
+  width: 100%;
+  height: 100%;
+}
+
+/* Customize Scrollbar */
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+/* Track */
+/* ::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 6px;
+} */
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: darkgray;
+  border-radius: 6px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: gray;
+}
+
+/* Customize ng-x progressbar color */
+ng-progess,
+.bar,
+.ng-progress-bar,
+.ng-bar {
+  background: -moz-radial-gradient(
+    circle,
+    #50c1c6,
+    #48b3b7,
+    #41a5a9,
+    #39979b,
+    #32898d
+  ) !important;
+  background: -webkit-radial-gradient(
+    circle,
+    #50c1c6,
+    #48b3b7,
+    #41a5a9,
+    #39979b,
+    #32898d
+  ) !important;
+  background: radial-gradient(
+    circle,
+    #50c1c6,
+    #48b3b7,
+    #41a5a9,
+    #39979b,
+    #32898d
+  ) !important;
+}
+
+/* Customize ng-x progressbar spinner color */
+.ng-spinner,
+.ng-spinner-icon {
+  border-top-color: #50c1c6 !important;
+  border-right-color: #39979b !important;
+  border-bottom-color: #48b3b7 !important;
+  border-left-color: #32898d !important;
+}

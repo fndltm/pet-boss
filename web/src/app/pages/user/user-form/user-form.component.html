@@ -1,0 +1,82 @@
+<h1 mat-dialog-title>
+  {{ user.id ? "Editar usuário" : "Criar usuário"}}
+</h1>
+<div mat-dialog-content>
+  <form [formGroup]="form">
+    <mat-form-field appearance="fill">
+      <mat-label>#</mat-label>
+      <input matInput formControlName="id">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Email</mat-label>
+      <input matInput required formControlName="email" placeholder="Informe o email" />
+      <mat-icon matSuffix color="warn" *ngIf="email.invalid">close</mat-icon>
+      <mat-icon matSuffix color="green" *ngIf="email.valid">check</mat-icon>
+      <mat-error *ngIf="email.getError('required')">
+        Por favor, preencha o email
+      </mat-error>
+      <mat-error *ngIf="email.getError('email')">
+        Por favor, insira um e-mail válido
+      </mat-error>
+      <mat-error *ngIf="email.getError('emailTaken')">
+        Email já está cadastrado, por favor informe outro
+      </mat-error>
+    </mat-form-field>
+
+    <ng-container *ngIf="user.id">
+      <mat-form-field appearance="fill">
+        <mat-label>Senha</mat-label>
+        <input matInput formControlName="password" placeholder="Ex.: Administrador">
+        <mat-hint>Em branco para não alterar</mat-hint>
+        <mat-error *ngIf="isFieldInvalid('password')">
+          Por favor, preencha o nome do usuário
+        </mat-error>
+      </mat-form-field>
+    </ng-container>
+
+    <ng-container *ngIf="!user.id">
+      <mat-form-field appearance="fill">
+        <mat-label>Senha</mat-label>
+        <input matInput formControlName="password" placeholder="Ex.: Administrador" required>
+        <mat-error *ngIf="isFieldInvalid('password')">
+          Por favor, preencha o nome do usuário
+        </mat-error>
+      </mat-form-field>
+    </ng-container>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Nome</mat-label>
+      <input matInput formControlName="name" placeholder="Ex.: Administrador" required>
+      <mat-error *ngIf="isFieldInvalid('name')">
+        Por favor, preencha o nome do usuário
+      </mat-error>
+    </mat-form-field>
+
+    <mat-slide-toggle color="primary" [checked]="user.active" formControlName="active">
+      Ativo
+    </mat-slide-toggle>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Permissões</mat-label>
+      <mat-select formControlName="roles" placeholder="Ex.: ADMIN" multiple required [compareWith]="compareRoles">
+        <mat-option *ngFor="let role of roles" [value]="role">
+          {{role.name}}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="isFieldInvalid('role')">
+        Por favor, selecione as permissões
+      </mat-error>
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button [mat-dialog-close]="false" color="warn">
+    Cancelar
+    <mat-icon>close</mat-icon>
+  </button>
+  <button mat-raised-button (click)="onSubmit()" color="accent" [disabled]="form.invalid">
+    Salvar
+    <mat-icon>check</mat-icon>
+  </button>
+</div>

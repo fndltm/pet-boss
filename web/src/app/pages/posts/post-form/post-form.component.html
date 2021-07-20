@@ -1,0 +1,53 @@
+<mat-card class="content">
+  <mat-card-title>
+    <button mat-icon-button matTooltip="Voltar" routerLink="/posts">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    Criar postagem
+  </mat-card-title>
+  <mat-card-content>
+    <form [formGroup]="form">
+      <mat-form-field appearance="fill">
+        <mat-label>Título</mat-label>
+        <input matInput placeholder="Ex. Como educar seu animal" formControlName="title" required>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Subtítulo</mat-label>
+        <input matInput placeholder="Ex. Veja o passo a passo" formControlName="subtitle">
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Texto</mat-label>
+        <textarea matInput formControlName="description" required cdkTextareaAutosize #autosize="cdkTextareaAutosize"
+          cdkAutosizeMinRows="1" cdkAutosizeMaxRows="5" wrap="hard"></textarea>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Imagem</mat-label>
+        <ngx-mat-file-input formControlName="image" placeholder="Envie uma imagem para o post"
+          [accept]="'image/png, image/jpeg'" [errorStateMatcher]="imageStateMatcher"
+          (change)="onInputFileChange($event)">
+        </ngx-mat-file-input>
+        <mat-icon matSuffix>attach_file</mat-icon>
+        <mat-error *ngIf="image.getError('unacceptedFile')">
+          A extensão da imagem deve ser estar no formato: png; jpeg; jpg; jfif; pjpeg; pjp</mat-error>
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+  <mat-card-footer>
+    <button mat-stroked-button color="accent" [disabled]="isLoading || form.invalid" type="button"
+      (click)="previewCard()">
+      <mat-icon>preview</mat-icon>
+      Pré-visualizar
+
+      <mat-spinner *ngIf="isLoading" [diameter]="20" color="white">
+      </mat-spinner>
+    </button>
+
+    <button mat-raised-button color="primary" class="color-white" [disabled]="isLoading || form.invalid">
+      <mat-icon>check</mat-icon>
+      Salvar
+
+      <mat-spinner *ngIf="isLoading" [diameter]="20" color="white">
+      </mat-spinner>
+    </button>
+  </mat-card-footer>
+</mat-card>

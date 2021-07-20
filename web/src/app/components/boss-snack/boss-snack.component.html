@@ -1,0 +1,12 @@
+<div class="snack">
+  <div class="snack__container">
+    <mat-icon class="snack__container__icon">{{getIcon}}</mat-icon>
+    <span class="snack__container__message">{{data.message}}</span>
+  </div>
+
+  <div class="snack__clear">
+    <button class="snack__clear__button" mat-icon-button (click)="dismiss()">
+      <mat-icon>clear</mat-icon>
+    </button>
+  </div>
+</div>

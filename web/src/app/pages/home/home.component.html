@@ -1,0 +1,7 @@
+<div class="content">
+  <mat-carousel [hideArrows]="false" [hideIndicators]="false" [useKeyboard]="true" [useMouseWheel]="false"
+    [maintainAspectRatio]="false" [slideHeight]="'100%'">
+    <mat-carousel-slide *ngFor="let slide of slides" [image]="slide.image" overlayColor="#00000030"
+      [hideOverlay]="false"></mat-carousel-slide>
+  </mat-carousel>
+</div>
